@@ -10,14 +10,16 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "student")
+@Table(name = "user")
 @NoArgsConstructor
 @Getter
 @Setter
-public class Student implements Serializable {
+public class User implements Serializable {
     @Id
-    private Long id;
-    private String name;
-    private String number;
-    private int age;
+    private int userId;
+    private String userName;
+    private String password;
+    private String email;
+    private String phoneNum;
+    private String role;
 }
