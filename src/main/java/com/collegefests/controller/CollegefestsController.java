@@ -1,6 +1,7 @@
 package com.collegefests.controller;
 
 import com.collegefests.model.Event;
+import com.collegefests.model.TicketDetails;
 import com.collegefests.model.User;
 import com.collegefests.model.UserRegistration;
 import com.collegefests.service.EventService;
@@ -28,6 +29,11 @@ public class CollegefestsController {
     @RequestMapping(value = "/getUserDetails",method = RequestMethod.GET)
     public User getUserData(@RequestParam String userName, @RequestParam String passWord){
         return userService.getUserByIdAndPwd(userName,passWord);
+    }
+
+    @RequestMapping(value = "/getTicketDetails",method = RequestMethod.GET)
+    public List<TicketDetails> getTicketData(@RequestParam int userId){
+        return userService.getTicketDetails(userId);
     }
 
     @RequestMapping(value = "/saveUserDetails",method = RequestMethod.PUT)

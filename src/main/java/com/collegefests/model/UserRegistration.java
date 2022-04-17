@@ -16,8 +16,9 @@ import java.io.Serializable;
 @Setter
 public class UserRegistration implements Serializable {
     @Id
-    private int userId;
+    private int registrationId;
     private int eventId;
+    private int userId;
     private String eventName;
     private String phone;
     private String email;

@@ -1,5 +1,6 @@
 package com.collegefests.service;
 
+import com.collegefests.model.TicketDetails;
 import com.collegefests.model.UserRegistration;
 import com.collegefests.repository.UserRegistrationRepository;
 import com.collegefests.repository.UserRepository;
