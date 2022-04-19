@@ -51,13 +51,13 @@ public class UserService {
     public User getUserByIdAndPwd(String userName,String passWord){
         List<User> allUsers = repository.findAll();
         User userDetails = new User();
-        for(int i=0;i<allUsers.size()-1;i++){
+        for(int i=0;i<allUsers.size();i++){
             if(allUsers.get(i).getUserName().equals(userName) && allUsers.get(i).getPassword().equals(passWord)){
                 userDetails = allUsers.get(i);
                 break;
             }
         }
-        if(userDetails.getUserName().isEmpty()){
+        if(userDetails.getUserName()==null){
             userDetails.setUserId(0);
             userDetails.setUserName(null);
             userDetails.setPhoneNum(null);
