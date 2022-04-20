@@ -87,23 +87,35 @@ public class CollegefestsControllerTest {
     }
 
     @Test
-    void printTicketDetails() {
-
-    }
-
-    @Test
-    void saveUserData() {
-    }
-
-    @Test
     void publishAnEvent() {
+        Event event = new Event();
+        event.setEventId(1);
+        event.setEventName("test");
+        event.setEventDescription("testing");
+        event.setEventOrganiser("jaidev");
+        event.setEventLocation("denton");
+        event.setFees("200$");
+        event.setPhone("9550504737");
+        event.setDate("2022-01-01");
+        event.setTime("10:30AM");
+        when(eventRepository.save(event)).thenReturn(event);
+        assertEquals(event,eventService.saveEvent(event));
     }
 
-    @Test
-    void registerToEvent() {
-    }
 
     @Test
     void deleteAnEvent() {
+        Event event = new Event();
+        event.setEventId(1);
+        event.setEventName("test");
+        event.setEventDescription("testing");
+        event.setEventOrganiser("jaidev");
+        event.setEventLocation("denton");
+        event.setFees("200$");
+        event.setPhone("9550504737");
+        event.setDate("2022-01-01");
+        event.setTime("10:30AM");
+        when(eventRepository.save(event)).thenReturn(event);
+        assertEquals("Event deleted",eventService.deleteEvent(1));
     }
 }
